@@ -33,12 +33,20 @@ function getValue(elementId) {
     return score
 }
 
-
+function addBgColor(elementId) {
+    const element = document.getElementById(elementId)
+    element.classList.add('bg-orange-400')
+}
+function removeBgColor(elementId) {
+    const element = document.getElementById(elementId)
+    element.classList.remove('bg-orange-400')
+}
 function startGame() {
     const alphabet = getRandomAlphabet()
     const current = document.getElementById('screen')
     console.log(current.innerText)
     current.innerText = alphabet
+    addBgColor(alphabet)
 }
 
 function letsPlay() {
@@ -56,10 +64,11 @@ function gameOver() {
     const score = document.getElementById('score').innerText
     setValue('result-final', score)
     const current = document.getElementById('screen').innerText
+    removeBgColor(current)
 }
 
 
-const btns = document.querySelectorAll('#btn')
+const btns = document.querySelectorAll('.kbd')
 for (const btn of btns) {
     btn.addEventListener('click', function (e) {
         const current = getElement('screen').innerText
@@ -68,9 +77,9 @@ for (const btn of btns) {
 
         if (later == expect) {
             const curScore = getValue('score')
-
             const newScore = curScore + 1
             setValue('score', newScore)
+            removeBgColor(expect)
             startGame()
         } else {
             const currentScore = getValue('life')
