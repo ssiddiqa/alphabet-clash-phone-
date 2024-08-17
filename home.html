@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet-crash</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- daisy ui and tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-anton {
+            font-family: "Anton", sans-serif;
+        }
+
+        .font-poppin {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+
+<body class=".font-poppin">
+    <main class="min-h-screen bg-[#010313] bg-[url(/images/background.png)] bg-no-repeat bg-center">
+        <!-- Home Section -->
+        <section id="home" class="home min-h-screen text-white flex justify-center items-center">
+            <div class=" flex flex-col items-center gap-8 m-2">
+                <h1 class="text-center text-6xl md:text-8xl font-anton uppercase">ALPHABET CLASH</h1>
+                <p class="text-xl text-center">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+                <button onclick="letsPlay()" id="home-btn" class="btn bg-white text-xl">Play Now</button>
+            </div>
+        </section>
+        <!-- play ground -->
+        <section id="playGround" class="play hidden">
+            <div class="flex flex-col items-center gap-20 pt-20">
+                <!-- screen -->
+                <div
+                    class="artboard artboard-horizontal w-3/4 h-80 sm:phone-1 md:phone-6 lg:phone-6 border-[16px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3]">
+                    <div class="flex justify-center">
+                        <p class="bg-[#2F2941] text-white text-lg px-5 py-3 rounded-b-lg">Don't watch keyboard while
+                            playing...</p>
+                    </div>
+                    <div class="flex justify-center">
+                        <p id="screen" class="font-semibold text-8xl mt-16 uppercase">Y</p>
+                    </div>
+                </div>
+                <!-- keyboard starts -->
+                <div class="mx-2 kbd-sm md:kbd-md lg:kbd-lg md:text-2xl">
+                    <div class="my-1 flex w-full justify-center gap-1">
+                        <kbd id="btn" class="kbd">q</kbd>
+                        <kbd id="btn" class="kbd">w</kbd>
+                        <kbd id="btn" class="kbd">e</kbd>
+                        <kbd id="btn" class="kbd">r</kbd>
+                        <kbd id="btn" class="kbd">t</kbd>
+                        <kbd id="btn" class="kbd">y</kbd>
+                        <kbd id="btn" class="kbd">u</kbd>
+                        <kbd id="btn" class="kbd">i</kbd>
+                        <kbd id="btn" class="kbd">o</kbd>
+                        <kbd id="btn" class="kbd">p</kbd>
+                    </div>
+                    <div class="my-1 flex w-full justify-center gap-1">
+                        <kbd id="btn" class="kbd">a</kbd>
+                        <kbd id="btn" class="kbd">s</kbd>
+                        <kbd id="btn" class="kbd">d</kbd>
+                        <kbd id="btn" class="kbd">f</kbd>
+                        <kbd id="btn" class="kbd">g</kbd>
+                        <kbd id="btn" class="kbd">h</kbd>
+                        <kbd id="btn" class="kbd">j</kbd>
+                        <kbd id="btn" class="kbd">k</kbd>
+                        <kbd id="btn" class="kbd">l</kbd>
+                    </div>
+                    <div class="my-1 flex w-full justify-center gap-1">
+                        <kbd id="btn" class="kbd">z</kbd>
+                        <kbd id="btn" class="kbd">x</kbd>
+                        <kbd id="btn" class="kbd">c</kbd>
+                        <kbd id="btn" class="kbd">v</kbd>
+                        <kbd id="btn" class="kbd">b</kbd>
+                        <kbd id="btn" class="kbd">n</kbd>
+                        <kbd id="btn" class="kbd">m</kbd>
+                        <kbd id="btn" class="kbd">/</kbd>
+                    </div>
+                </div>
+                <!-- keyboard ends -->
+                <!-- score -->
+                <div class="mb-24">
+                    <button class="btn bg-[#360490] text-white rounded-full border-0 px-6">
+                        <span class="text-lg">Life</span>
+                        <img class="mt-2" src="/images/Group 23.svg" alt="">
+                        <span id="life" class="text-lg">0</span>
+                    </button>
+                    <button class="btn bg-[#360490] text-white rounded-full border-0 px-6">
+                        <span class="text-lg">Score</span>
+                        <img src="/images/monetization_on.svg" alt="">
+                        <span id="score" class="text-lg">0</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Result section -->
+        <section id="finalRes" class="flex items-center justify-center min-h-screen hidden">
+            <div class="text-white text-center space-y-10 bg-[#FFFFFF33] p-10 rounded-xl">
+                <h1 class="text-4xl">Game Over!!</h1>
+                <h1 class="text-7xl">
+                    <span class="font-extrabold">Score:</span>
+                    <span id="result-final" class="font-semibold">0</span>
+                </h1>
+                <button onclick="letsPlay()" class="btn text-xl font-bold">Play Again</button>
+                <p class="text-lg">Practice will make you Pro</p>
+            </div>
+        </section>
+    </main>
+    <script src="/Js/main.js"></script>
+    <!-- <script src="/Js/utility.js"></script>
+    <script src="/Js/connect.js"></script> -->
+</body>
+
+</html>
